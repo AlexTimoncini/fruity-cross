@@ -39,9 +39,9 @@ main{
     transform: rotate(-45deg);
 }
 #grid{
-    width: calc(50vh + 2px);
+    width: calc(70vw + 2px);
     min-width: 252px;
-    height: calc(50vh + 2px);
+    height: calc(70vw + 2px);
     min-height: 252px;
     margin: 0 auto;
     display: flex;
@@ -49,9 +49,9 @@ main{
     border: 1px solid black;
 }
 .cell{
-    width: calc(50vh / 6);
+    width: calc(70vw / 6);
     min-width: 42px;
-    height: calc(50vh / 6);
+    height: calc(70vw / 6);
     min-height: 42px;
     border: 1px solid black;
     cursor: pointer;
@@ -71,7 +71,7 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: calc(50vh + 2px);
+    width: calc(50vw + 2px);
     margin: 2rem auto 0;
     column-gap: 20px;
 }
