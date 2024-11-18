@@ -54,13 +54,22 @@ function initGrid(data){
 function initEvents(data) {
     initErrors(data.errors)
     localStorage.removeItem("activeFruit")
+    let fruits = []
+    for (let i = 1; i <= 10; i++) {
+        let img = new Image()
+        img.src = `./assets/images/fruits/fruit_${activeFruit}.png`
+        img.classList.add("fruit-img")
+        img.draggable = false
+        fruits[i] = (img)
+    }
     data.grid.forEach((c, i) => {
         let cell = document.getElementById("cell_"+(i+1))
         if(!c.placed){
             cell.addEventListener("click", ()=>{
                 let activeFruit = parseInt(localStorage.getItem("activeFruit")) || false
                 if(activeFruit){
-                    cell.innerHTML = `<img class="fruit-img" src="./assets/images/fruits/fruit_${activeFruit}.png" alt="fruit image" draggable="false">`
+                    cell.innerHTML = "";
+                    cell.appendChild(fruits[activeFruit].cloneNode());
                     if(activeFruit === c.value) {
                         if(cell.classList.contains("cell-error")){
                             cell.classList.remove("cell-error")
