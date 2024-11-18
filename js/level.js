@@ -17,7 +17,7 @@ function init(){
 }
 async function loadLevel(levelNumber) {
     try {
-        const response = await fetch(`/levels/${levelNumber}.json`);
+        const response = await fetch(`./levels/${levelNumber}.json`);
         if (!response.ok) {
             alertGX(`Failed to load level ${levelNumber}`, "", false, ()=>{top.location = "/"});
         }
@@ -31,7 +31,7 @@ async function loadLevel(levelNumber) {
 function initGrid(data){
     let grid = ""
     data.grid.forEach((cell, i) => {
-        grid += `<div class="cell ${cell.placed ? "pre-placed" : ""}" id="cell_${i+1}" data-result="${cell.value}" ${cell.placed ? `data-disabled="true"` : ""}>${cell.placed ? `<img class="fruit-img" src="/assets/images/fruits/fruit_${cell.value}.png" alt="fruit image" draggable="false">` : ""}</div>`
+        grid += `<div class="cell ${cell.placed ? "pre-placed" : ""}" id="cell_${i+1}" data-result="${cell.value}" ${cell.placed ? `data-disabled="true"` : ""}>${cell.placed ? `<img class="fruit-img" src="./assets/images/fruits/fruit_${cell.value}.png" alt="fruit image" draggable="false">` : ""}</div>`
     })
     document.getElementById("grid").insertAdjacentHTML("afterbegin", grid)
     initEvents(data)
@@ -60,7 +60,7 @@ function initEvents(data) {
             cell.addEventListener("click", ()=>{
                 let activeFruit = parseInt(localStorage.getItem("activeFruit")) || false
                 if(activeFruit){
-                    cell.innerHTML = `<img class="fruit-img" src="/assets/images/fruits/fruit_${activeFruit}.png" alt="fruit image" draggable="false">`
+                    cell.innerHTML = `<img class="fruit-img" src="./assets/images/fruits/fruit_${activeFruit}.png" alt="fruit image" draggable="false">`
                     if(activeFruit === c.value) {
                         if(cell.classList.contains("cell-error")){
                             cell.classList.remove("cell-error")
