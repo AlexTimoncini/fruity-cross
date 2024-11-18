@@ -1,0 +1,22 @@
+footer{
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 0;
+    position: relative;
+    background-color: var(--blue);
+    color: var(--white)
+}
+
+footer a{
+    color: white;
+}
+
+.logo-right{
+    position: absolute;
+    padding: 5px;
+    top: 0;
+    height: 100%;
+    right: 0;
+    width: 36px;
+    filter: invert(1);
+}
