@@ -8,10 +8,10 @@ function init(){
             let level = params[0].split("=")[1]
             loadLevel(level);
         } else {
-            top.location = "/"
+            top.location = "#/"
         }
     } else {
-        top.location = "/"
+        top.location = "#/"
     }
     
 }
@@ -19,7 +19,7 @@ async function loadLevel(levelNumber) {
     try {
         const response = await fetch(`./levels/${levelNumber}.json`);
         if (!response.ok) {
-            alertGX(`Failed to load level ${levelNumber}`, "", false, ()=>{top.location = "/"});
+            alertGX(`Failed to load level ${levelNumber}`, "", false, ()=>{top.location = "#/"});
         }
         const levelData = await response.json();
         document.getElementById("title").innerText = levelData.level.title
@@ -123,14 +123,14 @@ function newError() {
     }
 }
 function gameOver(){
-    alertGX("Try again?","GAME OVER", true, ()=>{restartGame()}, ()=>{top.location = "/"})
+    alertGX("Try again?","GAME OVER", true, ()=>{restartGame()}, ()=>{top.location = "#/"})
 }
 function checkWin(){
     let notCompleted = document.querySelectorAll("#grid .cell:not(.cell-right):not(.pre-placed)")
     if(notCompleted.length === 0){
         saveWin()
         alertGX("You must feel good uh!?", "VICTORY", false, ()=> {
-            top.location = "/"
+            top.location = "#/"
         })
     }
 }
