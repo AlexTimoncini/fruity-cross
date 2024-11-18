@@ -46,3 +46,86 @@ function removeAlert(id, errorSelector=false, timeoutId){
     document.querySelector(".alert[data-id='"+id+"']").remove()
 }
 /* -- FINE ALERT -- */
+function alertGX(msg, title="", cancelBtn=false, callback=false, cancelCallback=false, okText=false, cancelText=false, callBackTimer=false) {
+    closeAlertGX()
+    let html = `
+        <div class="alertGX">
+            <div class="alert-dialog-mask"></div>
+            <div class="alert-dialog">
+                <div class="alert-dialog-container">
+                    ${title ? '<div class="alert-dialog-title">'+title+'</div>' : ''}
+                    <div class="alert-dialog-content">${msg}</div>
+                    <div class="alert-dialog-footer">
+                        ${cancelBtn ? '<button id="cancelAlert" class="alert-dialog-button">'+(cancelText ? cancelText : "BACK")+'</button>' : ""}
+                        <button id="confirmAlert" class="alert-dialog-button alert-dialog-button--primal">${okText ? okText : "OK"}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `
+    document.querySelector("#app").insertAdjacentHTML("beforeend", html)
+    if(callBackTimer){
+        document.getElementById("confirmAlert").style.setProperty("--duration", (callBackTimer / 1000).toFixed(0)+"s")
+        document.getElementById("confirmAlert").classList.add("timer")
+        let timeoutId = setTimeout(()=>{
+            closeAlertGX()
+            if(typeof callback == "function") {
+                callback()
+            }
+        }, callBackTimer)
+        localStorage.setItem("timeoutId", timeoutId);
+    }
+    if(cancelBtn){
+        document.getElementById("cancelAlert").addEventListener("click", function(){
+            closeAlertGX()
+            if(typeof cancelCallback == "function") {
+                cancelCallback()
+            }
+        })
+    }
+    document.getElementById("confirmAlert").addEventListener("click", function(){
+        closeAlertGX()
+        if(typeof callback == "function") {
+            callback()
+        }
+    })
+}
+function closeAlertGX(){
+    clearTimeout(localStorage.getItem("timeoutId"))
+    document.querySelectorAll(".alertGX").forEach( alert => {
+        alert.remove()
+    })
+}
+//init DB
+const dbName = "fruity-cross";
+const dbVersion = 1;
+
+function initDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(dbName, dbVersion);
+
+        request.onupgradeneeded = (event) => {
+            const db = event.target.result;
+
+            if (!db.objectStoreNames.contains("levels")) {
+                db.createObjectStore("levels", { keyPath: "id", autoIncrement: true });
+            }
+        };
+
+        request.onsuccess = (event) => {
+            console.log("Database inizializzato!");
+            resolve(event.target.result);
+        };
+
+        request.onerror = (event) => {
+            console.error("Errore nell'inizializzazione del database:", event.target.error);
+            reject(event.target.error);
+        };
+    });
+}
+initDB().then((db) => {
+    console.log("DB pronto per l'uso:", db);
+}).catch((error) => {
+    console.error("Errore durante l'inizializzazione:", error);
+});
+
