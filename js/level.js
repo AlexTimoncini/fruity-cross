@@ -76,7 +76,7 @@ function initEvents(data) {
                         img.draggable = false;
                         cell.appendChild(img);
                     }
-                    img.src = fruits[activeFruit]
+                    img.src = fruits[activeFruit].src
                     if(activeFruit === c.value) {
                         if(cell.classList.contains("cell-error")){
                             cell.classList.remove("cell-error")
