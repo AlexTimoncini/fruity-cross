@@ -1,6 +1,6 @@
 async function getLevels() {
     try {
-        const response = await fetch('/levels/levels.json');
+        const response = await fetch('./levels/levels.json');
         if (!response.ok) {
             throw new Error('Failed to load level manifest');
         }
