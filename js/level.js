@@ -69,7 +69,14 @@ function initEvents(data) {
                 let activeFruit = parseInt(localStorage.getItem("activeFruit")) || false
                 if(activeFruit){
                     cell.innerHTML = "";
-                    cell.appendChild(fruits[activeFruit].cloneNode());
+                    let img = cell.querySelector("img");
+                    if (!img) {
+                        img = document.createElement("img");
+                        img.classList.add("fruit-img");
+                        img.draggable = false;
+                        cell.appendChild(img);
+                    }
+                    img.src = fruits[activeFruit]
                     if(activeFruit === c.value) {
                         if(cell.classList.contains("cell-error")){
                             cell.classList.remove("cell-error")
