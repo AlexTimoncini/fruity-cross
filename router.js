@@ -1,7 +1,8 @@
 //ROUTER
 import { Router } from './js/classes/router.class.js'
 //let router = new Router('http://127.0.0.1:5500');
-let router = new Router('http://localhost:63342/fruity-cross-dev/index.html');
+//let router = new Router('http://localhost:63342/fruity-cross-dev/index.html');
+let router = new Router('https://alextimoncini.github.io/fruity-cross/');
 //rotte
 router.get('/', function(){
     buildPage('home.html',
