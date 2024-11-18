@@ -57,7 +57,7 @@ function initEvents(data) {
     let fruits = []
     for (let i = 1; i <= 10; i++) {
         let img = new Image()
-        img.src = `./assets/images/fruits/fruit_${activeFruit}.png`
+        img.src = `./assets/images/fruits/fruit_${i}.png`
         img.classList.add("fruit-img")
         img.draggable = false
         fruits[i] = (img)
