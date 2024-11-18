@@ -1,0 +1,112 @@
+.alertGX{
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: var(--txt-color)
+}
+.alert-dialog-mask {
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    opacity: .3;
+    background-color: var(--main-black);
+}
+.alert-dialog{
+    font-weight: var(--fw-regular);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 270px;
+    margin: auto;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    max-width: 95%;
+    overflow: hidden;
+}
+.alert-dialog-container {
+    height: inherit;
+    padding-top: 16px;
+    overflow: hidden;
+}
+.alert-dialog-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0 8px;
+    text-align: center;
+}
+.alert-dialog-content {
+    background-clip: padding-box;
+    padding: 4px 12px 8px;
+    min-height: 36px;
+    text-align: center;
+}
+.alert-dialog-button {
+    --duration: 5s;
+    cursor: pointer;
+    letter-spacing: 0;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #ddd;
+    background-color: transparent;
+    font-size: 1.1rem;
+    padding: 0 8px;
+    margin: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    outline: none;
+    color: rgb(0, 118, 255);
+    position: relative;
+    overflow: hidden;
+}
+.alert-dialog-button:active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.ons-css .alert-dialog-button--primal {
+    font-weight: 500;
+}
+.timer{
+    color: #f4f4f4;
+    animation-name: loadText;
+    animation-timing-function: linear;
+    animation-duration: var(--duration);
+}
+.timer::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(0, 118, 255);
+    z-index: -1;
+    animation-name: load;
+    animation-timing-function: linear;
+    animation-duration: var(--duration);
+    width: 100%;
+}
+@keyframes load {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+@keyframes loadText {
+    from {
+        color: #f4f4f4;
+
+    }
+    to {
+        color: rgb(0, 118, 255);
+
+    }
+}
