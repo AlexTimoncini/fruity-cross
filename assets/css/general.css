@@ -19,9 +19,6 @@ box-sizing: border-box;
     --mono: 'source-code-pro';
     --display: 'Roboto', sans-serif;
     --game: 'Game', sans-serif;
-
-    /*PADDING*/
-    --paddingX: 20px;
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -66,9 +63,6 @@ a:hover{
 .img-fluidY{
     display: block;
     height: 100%;
-}
-.text-nowrap{
-    text-wrap: none;
 }
 .container{
     max-width: 600px;
@@ -157,10 +151,12 @@ a{
     color: var(--blue);
     background-color: var(--white);
     cursor: pointer;
+    font-family: var(--game);
 }
 .big{
     margin-top: 1rem;
     scale: 1.5;
+    font-size: 1.5rem;
 }
 .btn-primary:hover{
     color: var(--white);
