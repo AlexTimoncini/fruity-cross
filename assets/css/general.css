@@ -12,12 +12,13 @@ box-sizing: border-box;
     --black: #000;
     --lgray: #eee;
     --dgray: #6c6c6c;
-    --blue: #6865f7;
+    --blue: #f95a93;
     --yellow: #ffd166;
     --error: #721c24;
     /*FONTS*/
     --mono: 'source-code-pro';
     --display: 'Roboto', sans-serif;
+    --game: 'Game', sans-serif;
 
     /*PADDING*/
     --paddingX: 20px;
@@ -34,16 +35,18 @@ box-sizing: border-box;
 }
 
 body{
-    min-height: 100vh;
-    font-family: var(--display);
+    height: 100vh;
+    font-family: var(--display), sans-serif;
     color: var(--black);
-    background-color: var(--white);
-    overflow-x: hidden;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(161,239,255,1) 100%);
+    overflow: hidden;
 }
 
 main{
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px - 35px);
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 a:hover{
@@ -68,7 +71,7 @@ a:hover{
     text-wrap: none;
 }
 .container{
-    max-width: 80%;
+    max-width: 600px;
     margin: 0 auto 0;
     height: 100%;
     padding: 20px 50px;
@@ -153,8 +156,13 @@ a{
     user-select: none;
     color: var(--blue);
     background-color: var(--white);
+    cursor: pointer;
 }
-a.btn-primary:hover{
+.big{
+    margin-top: 1rem;
+    scale: 1.5;
+}
+.btn-primary:hover{
     color: var(--white);
     background-color: var(--blue);
     border-color: var(--blue);
@@ -383,4 +391,8 @@ a.btn-primary:hover{
 @font-face {
     font-family: 'Roboto';
     src: url(../Roboto/Roboto-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Game';
+    src: url(../MightySouly-lxggD.ttf) format('truetype');
 }

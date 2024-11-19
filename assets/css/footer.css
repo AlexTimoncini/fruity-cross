@@ -4,7 +4,8 @@ footer{
     padding: 8px 0;
     position: relative;
     background-color: var(--blue);
-    color: var(--white)
+    color: var(--white);
+    height: 35px;
 }
 
 footer a{
@@ -18,4 +19,5 @@ footer a{
     height: 100%;
     right: 0;
     width: 36px;
+    background-color: var(--white);
 }
