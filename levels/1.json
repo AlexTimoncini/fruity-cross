@@ -1,6 +1,6 @@
 {
     "level": {
-        "title": "Level 1",
+        "title": 1,
         "data": {
             "errors": 3,
             "grid": [

@@ -1,13 +1,154 @@
 {
     "level": {
-        "title": "Level 2",
-        "grid": [
-            0, 1, 0, 1, 0, 1,
-            1, 0, 1, 0, 1, 0,
-            0, 1, 0, 1, 0, 1,
-            1, 0, 1, 0, 1, 0,
-            0, 1, 0, 1, 0, 1,
-            1, 0, 1, 0, 1, 0
-        ]
+        "title": 2,
+        "data": {
+            "errors": 3,
+            "grid": [
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                },
+                {
+                    "value": 1,
+                    "placed": false
+                },
+                {
+                    "value": 2,
+                    "placed": true
+                }
+            ]
+        }
     }
 }

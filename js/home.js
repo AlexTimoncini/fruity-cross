@@ -6,11 +6,10 @@ async function getLevels() {
         }
         const manifest = await response.json();
         const levels = manifest.levels;
-
-        console.log(`Total Levels: ${levels.length}`, levels);
-        levels.forEach((l, i)=>{
+        console.log(levels)
+        levels.forEach(l=>{
             let level = `
-                <li><a href="#/level?l=${i+1}">${i+1}: ${l}</a></li>
+                <li class="level"><a href="#/level?l=${l}"><span>${l}</span></a></li>
             `
             document.getElementById("levels").insertAdjacentHTML("beforeend", level)
         })
