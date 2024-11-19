@@ -95,6 +95,22 @@ function initEvents(data) {
                 } else {
                     alert("Select a fruit first!")
                 }
+                initDB().then((db) => {
+                    const key = localStorage.getItem("level")
+                    const property = "placedCells"; // The property you want to update
+                    const value = getGrid(); // The new value for the property
+
+                    updateRecordProperty(db, key, property, value)
+                        .then((updatedRecord) => {
+                            console.log("Updated record:", updatedRecord);
+                        })
+                        .catch((error) => {
+                            console.error("Error:", error);
+                        });
+                }).catch((error) => {
+                    console.error("Error initializing the database:", error);
+                });
+
             })
         }
     })
@@ -145,44 +161,129 @@ function checkWin(){
     }
 }
 function saveWin(){
-    console.log("save db")
     initDB().then((db) => {
         const newLevel = {
             title: localStorage.getItem("level"),
-            completed: true
+            completed: true,
+            placedCells: []
         };
-
-        addLevel(db, newLevel)
-            .then(() => {
-                console.log("Livello aggiunto al database!");
+        upsertLevelByTitle(db, newLevel)
+            .then((result) => {
+                console.log("Operazione completata:", result);
             })
             .catch((error) => {
-                console.error("Errore durante l'aggiunta del livello:", error);
+                console.error("Errore durante l'operazione:", error);
             });
     }).catch((error) => {
         console.error("Errore durante l'inizializzazione del database:", error);
     });
-
 }
 function restartGame(){
-    console.log("reset db")
-    location.reload()
+    initDB().then((db) => {
+        const key = localStorage.getItem("level")
+        const property = "placedCells"; // The property you want to update
+        const value = []; // The new value for the property
+
+        updateRecordProperty(db, key, property, value)
+            .then((updatedRecord) => {
+                location.reload()
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    }).catch((error) => {
+        console.error("Error initializing the database:", error);
+    });
 }
-function addLevel(db, level) {
+function upsertLevelByTitle(db, level) {
     return new Promise((resolve, reject) => {
         const transaction = db.transaction("levels", "readwrite");
         const store = transaction.objectStore("levels");
 
-        const request = store.add(level);
+        // Usa un indice o un cursor per verificare l'esistenza del titolo
+        const indexRequest = store.openCursor();
+        let found = false;
 
-        request.onsuccess = () => {
-            console.log("Livello aggiunto con successo:", level);
-            resolve(level);
+        indexRequest.onsuccess = (event) => {
+            const cursor = event.target.result;
+
+            if (cursor) {
+                const existingLevel = cursor.value;
+
+                // Controlla se il titolo corrisponde
+                if (existingLevel.title === level.title) {
+                    found = true;
+
+                    // Aggiorna il record esistente
+                    const updatedLevel = { ...existingLevel, ...level }; // Unisce i dati
+                    cursor.update(updatedLevel);
+
+                    console.log("Livello aggiornato con successo:", updatedLevel);
+                    resolve(updatedLevel);
+                } else {
+                    cursor.continue();
+                }
+            } else if (!found) {
+                // Se il titolo non esiste, aggiungi il nuovo livello
+                const addRequest = store.add(level);
+
+                addRequest.onsuccess = () => {
+                    console.log("Livello aggiunto con successo:", level);
+                    resolve(level);
+                };
+
+                addRequest.onerror = (event) => {
+                    console.error("Errore durante l'aggiunta del livello:", event.target.error);
+                    reject(event.target.error);
+                };
+            }
         };
 
-        request.onerror = (event) => {
-            console.error("Errore durante l'aggiunta del livello:", event.target.error);
+        indexRequest.onerror = (event) => {
+            console.error("Errore durante la ricerca del livello:", event.target.error);
             reject(event.target.error);
         };
     });
+}
+function updateRecordProperty(db, key, property, value) {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction("levels", "readwrite");
+        const store = transaction.objectStore("levels");
+
+        // Retrieve the record by its key (e.g., id or title)
+        const getRequest = store.get(key);
+
+        getRequest.onsuccess = (event) => {
+            const record = event.target.result;
+
+            if (record) {
+                // Update only the specific property
+                record[property] = value;
+
+                // Save the updated record back into the database
+                const updateRequest = store.put(record);
+
+                updateRequest.onsuccess = () => {
+                    console.log(`Record updated successfully: ${property} set to`, value);
+                    resolve(record);
+                };
+
+                updateRequest.onerror = (event) => {
+                    console.error("Error updating the record:", event.target.error);
+                    reject(event.target.error);
+                };
+            } else {
+                console.error("Record not found for key:", key);
+                reject("Record not found");
+            }
+        };
+
+        getRequest.onerror = (event) => {
+            console.error("Error retrieving the record:", event.target.error);
+            reject(event.target.error);
+        };
+    });
+}
+function getGrid() {
+
 }
