@@ -18,5 +18,13 @@ async function getLevels() {
         console.error(error.message);
     }
 }
-
-getLevels();
+init()
+function init() {
+    getLevels();
+    document.getElementById("levels-btn").addEventListener("click", ()=>{
+        document.getElementById("levels-wrapper").classList.add("active")
+    })
+    document.querySelector("#levels-wrapper .close-button").addEventListener("click", ()=>{
+        document.getElementById("levels-wrapper").classList.remove("active")
+    })
+}

@@ -5,7 +5,7 @@
     left: 0;
     top: 0;
     background-color: var(--white);
-    z-index: 3;
+    z-index: 1000;
 }
 .wrapper{
     width:200px;
@@ -14,7 +14,7 @@
     left:50%;
     top:50%;
     transform: translate(-50%, -50%);
-    z-index: 5;
+    z-index: 10001;
 }
 .circle{
     width:20px;

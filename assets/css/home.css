@@ -15,10 +15,44 @@
 .subtitle{
     font-size: 25px;
 }
-#levels{
-    display: none;
+#levels-wrapper{
+    opacity: 0;
+    z-index: -10;
+    scale: 0;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    inset: 40px;
+    border-radius: 30px;
+    transition: all .33s ease-in-out;
+    background-color: var(--light-blue);
+}
+
+#levels-wrapper.active {
+    opacity: 1;
+    scale: 1;
+    z-index: 10;
+}
+#levels-wrapper .backdrop{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--white);
+}
+#levels-wrapper .level-title {
+    height: 50px;
+    background-color: var(--blue);
+    color: var(--white);
+    width: 50%;
+    margin: -25px auto 0;
+    line-height: 50px;
+    font-family: var(--game);
+    border-radius: 15px;
+}
+#levels{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 20px;
 }

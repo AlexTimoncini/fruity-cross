@@ -13,7 +13,9 @@ box-sizing: border-box;
     --lgray: #eee;
     --dgray: #6c6c6c;
     --blue: #f95a93;
-    --yellow: #ffd166;
+    --light-blue: #ffecf4;
+    --green: #2fce89;
+    --dgreen: #299a66;
     --error: #721c24;
     /*FONTS*/
     --mono: 'source-code-pro';
@@ -295,18 +297,18 @@ a{
 }
 .close-button {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 15px;
-    height: 15px;
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
 }
 .close-button::before,
 .close-button::after {
     content: '';
     position: absolute;
-    width: 3px;
-    border-radius: 3px;
+    width: 4px;
+    border-radius: 4px;
     height: 100%;
     background-color: var(--blue);
     top: 0;
@@ -331,10 +333,6 @@ a{
 
 .bg-lgray{
     background-color: var(--lgray);
-}
-
-.bg-yellow{
-    background-color: var(--yellow);
 }
 
 .bg-blue{
