@@ -23,6 +23,7 @@ async function loadLevel(levelNumber) {
         }
         const levelData = await response.json();
         document.getElementById("title").innerText = levelData.level.title
+        localStorage.setItem("level", levelData.level.title)
         initGrid(levelData.level.data)
     } catch (error) {
         alertGX(error.message);
@@ -46,8 +47,10 @@ function initGrid(data){
         let seconds = parseInt(localStorage.getItem("timer"));
         const minutes = Math.floor(seconds / 60);
         const remainingSeconds = seconds % 60;
-        document.getElementById("timer").innerText =
-            `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
+        if(document.getElementById("timer")) {
+            document.getElementById("timer").innerText =
+                `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
+        }
     }
     //END CLOCK
 }
@@ -143,8 +146,43 @@ function checkWin(){
 }
 function saveWin(){
     console.log("save db")
+    initDB().then((db) => {
+        const newLevel = {
+            title: localStorage.getItem("level"),
+            completed: true
+        };
+
+        addLevel(db, newLevel)
+            .then(() => {
+                console.log("Livello aggiunto al database!");
+            })
+            .catch((error) => {
+                console.error("Errore durante l'aggiunta del livello:", error);
+            });
+    }).catch((error) => {
+        console.error("Errore durante l'inizializzazione del database:", error);
+    });
+
 }
 function restartGame(){
     console.log("reset db")
     location.reload()
+}
+function addLevel(db, level) {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction("levels", "readwrite");
+        const store = transaction.objectStore("levels");
+
+        const request = store.add(level);
+
+        request.onsuccess = () => {
+            console.log("Livello aggiunto con successo:", level);
+            resolve(level);
+        };
+
+        request.onerror = (event) => {
+            console.error("Errore durante l'aggiunta del livello:", event.target.error);
+            reject(event.target.error);
+        };
+    });
 }

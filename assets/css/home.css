@@ -24,7 +24,7 @@
     transform: translate(-50%, -50%);
     border-radius: 30px;
     transition: all .33s ease-in-out;
-    background-color: var(--light-blue);
+    background-color: var(--main-color-light);
     width: calc(100% - 40px);
     max-width: 560px;
     height: calc(100% - 80px);
@@ -47,7 +47,7 @@
 }
 #levels-wrapper .level-title {
     height: 50px;
-    background-color: var(--blue);
+    background-color: var(--main-color);
     color: var(--white);
     width: 50%;
     margin: -25px auto 0;
@@ -58,18 +58,26 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    row-gap: 10px;
+    row-gap: 20px;
     column-gap: 20px;
     justify-content: center;
     align-content: center;
     margin-top: 2rem;
 }
 .level {
-    max-width: 33%;
+    width: calc(33% - 20px);
+    max-width: calc(33% - 20px);
     aspect-ratio: 1/1;
     flex-grow: 1;
-    background-color: var(--blue);
+    background-color: var(--green);
     border-radius: 20px;
+}
+.level.locked{
+    pointer-events: none;
+    background-color: var(--dgreen);
+}
+.level.completed{
+    background-color: var(--main-color);
 }
 .level a{
     width: 100%;
@@ -80,4 +88,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.level img{
+    width: 60%;
+    height: 60%;
+    display: block;
+    margin: 0 auto;
 }

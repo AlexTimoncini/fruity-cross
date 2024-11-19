@@ -12,8 +12,8 @@ box-sizing: border-box;
     --black: #000;
     --lgray: #eee;
     --dgray: #6c6c6c;
-    --blue: #f95a93;
-    --light-blue: #ffecf4;
+    --main-color: #f95a93;
+    --main-color-light: #ffecf4;
     --green: #2fce89;
     --dgreen: #299a66;
     --error: #721c24;
@@ -25,12 +25,12 @@ box-sizing: border-box;
 
 ::-moz-selection { /* Code for Firefox */
     color: var(--white);
-    background: var(--blue);
+    background: var(--main-color);
 }
 
 ::selection {
     color: var(--white);
-    background: var(--blue);
+    background: var(--main-color);
 }
 
 body{
@@ -143,14 +143,14 @@ a{
 .btn-primary{
     display: inline-block;
     border: 1px solid;
-    border-color: var(--blue);
+    border-color: var(--main-color);
     padding: 15px 13px;
     border-radius: 20px;
     font-weight: bold;
     text-decoration: none;
     transition: all 0.33s ease-in-out;
     user-select: none;
-    color: var(--blue);
+    color: var(--main-color);
     background-color: var(--white);
     cursor: pointer;
     font-family: var(--game);
@@ -161,8 +161,8 @@ a{
 }
 .btn-primary:hover{
     color: var(--white);
-    background-color: var(--blue);
-    border-color: var(--blue);
+    background-color: var(--main-color);
+    border-color: var(--main-color);
     text-decoration: none;
 }
 .no-events{
@@ -171,8 +171,8 @@ a{
 }
 .info-btn{
     display: inline-block;
-    color: var(--blue);
-    border: 1px solid var(--blue);
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
     border-radius: 50%;
     height: 20px;
     width: 20px;
@@ -187,7 +187,7 @@ a{
 }
 .info-text{
     background-color: var(--white);
-    border: 1px solid var(--blue);
+    border: 1px solid var(--main-color);
     padding: 10px;
     width: 200px;
     display: none;
@@ -205,7 +205,7 @@ a{
     height: 14px;
     width: 14px;
     background-color: white;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--main-color);
     transform: rotate(45deg);
     top: calc(100% - 7px);
     left: calc(50% - 7px);
@@ -252,12 +252,12 @@ a{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--blue);
+    color: var(--main-color);
 }
 .alert-progress{
     width: 0;
     height: 5px;
-    background-color: var(--blue);
+    background-color: var(--main-color);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -284,7 +284,7 @@ a{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--blue);
+    color: var(--main-color);
 }
 .error-icon::before {
     content: "\2717"; /* Unicode character for cross symbol */
@@ -310,7 +310,7 @@ a{
     width: 4px;
     border-radius: 4px;
     height: 100%;
-    background-color: var(--blue);
+    background-color: var(--main-color);
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -336,7 +336,7 @@ a{
 }
 
 .bg-blue{
-    background-color: var(--blue);
+    background-color: var(--main-color);
 }
 /*MEDIA QUERIES*/
 @media screen and (max-width: 992px) {
