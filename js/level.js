@@ -22,7 +22,7 @@ async function loadLevel(levelNumber) {
             alertGX(`Failed to load level ${levelNumber}`, "", false, ()=>{top.location = "#/"});
         }
         const levelData = await response.json();
-        document.getElementById("title").innerText = levelData.level.title
+        document.getElementById("title").innerText = "Level "+levelData.level.title
         localStorage.setItem("level", levelData.level.title)
         initGrid(levelData.level.data)
     } catch (error) {
@@ -38,11 +38,16 @@ function initGrid(data){
     initEvents(data)
     //CLOCK
     localStorage.setItem("timer", "0")
-    setInterval(() => {
+    console.log(localStorage.getItem("interval"))
+    if(localStorage.getItem("interval")) {
+        clearInterval(localStorage.getItem("interval"))
+    }
+    let interval = setInterval(() => {
         let seconds = parseInt(localStorage.getItem("timer"));
         localStorage.setItem("timer", (seconds+1).toString())
         updateTimer();
     }, 1000);
+    localStorage.setItem("interval", interval.toString())
     function updateTimer() {
         let seconds = parseInt(localStorage.getItem("timer"));
         const minutes = Math.floor(seconds / 60);
@@ -58,7 +63,7 @@ function initEvents(data) {
     initErrors(data.errors)
     localStorage.removeItem("activeFruit")
     let fruits = []
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 5; i++) {
         let img = new Image()
         img.src = `./assets/images/fruits/fruit_${i}.png`
         img.classList.add("fruit-img")

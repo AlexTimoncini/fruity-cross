@@ -1,0 +1,464 @@
+{
+	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
+	"name": "Fruity-Cross",
+	"short_name": "GX",
+	"start_url": ".",
+	"content_security_policy": "script-src 'self' https://example.com; object-src 'self'",
+	"default_locale": "en",
+	"manifest_version": 2,
+	"display": "standalone",
+	"background_color": "#ffecf4",
+	"icons": [
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "71x71"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "89x89"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "107x107"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "142x142"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "284x284"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "150x150"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "188x188"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "225x225"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "300x300"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "600x600"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "310x150"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "388x188"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "465x225"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "620x300"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "1240x600"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "310x310"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "388x388"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "465x465"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "620x620"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "1240x1240"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "44x44"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "55x55"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "66x66"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "88x88"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "176x176"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "50x50"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "63x63"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "75x75"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "100x100"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "200x200"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "620x300"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "775x375"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "930x450"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "1240x600"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "2480x1200"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "16x16"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "20x20"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "24x24"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "30x30"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "36x36"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "40x40"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "44x44"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "60x60"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "64x64"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "80x80"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "16x16"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "20x20"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "24x24"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "30x30"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "36x36"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "40x40"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "44x44"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "60x60"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "64x64"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "80x80"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "16x16"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "20x20"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "24x24"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "30x30"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "36x36"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "40x40"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "44x44"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "60x60"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "64x64"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "80x80"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "512x512"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "144x144"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "16x16"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "20x20"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "29x29"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "40x40"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "50x50"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "57x57"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "58x58"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "60x60"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "64x64"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "76x76"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "80x80"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "87x87"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "100x100"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "114x114"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "120x120"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "128x128"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "144x144"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "152x152"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "167x167"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "180x180"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "512x512"
+		},
+		{
+			"src": "./assets/images/fruit-logo.png",
+			"sizes": "1024x1024"
+		}
+	],
+	"orientation": "portrait",
+	"scope": "/",
+	"theme_color": "#1c1c1c"
+}

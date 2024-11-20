@@ -1,16 +1,16 @@
 main{
-    padding-top: 5rem;
     user-select: none;
 }
 
 .title{
     font-size: 40px;
     margin-bottom: 2rem;
+    font-family: var(--game);
 }
 .level-bar{
     display: flex;
     justify-content: space-between;
-    width: calc(50vh + 2px);
+    width: calc(90vw + 2px);
     margin: 0 auto;
 }
 .error-bar{
@@ -39,9 +39,9 @@ main{
     transform: rotate(-45deg);
 }
 #grid{
-    width: calc(70vw + 2px);
+    width: calc(90vw + 2px);
     min-width: 252px;
-    height: calc(70vw + 2px);
+    height: calc(90vw + 2px);
     min-height: 252px;
     margin: 0 auto;
     display: flex;
@@ -49,9 +49,9 @@ main{
     border: 1px solid black;
 }
 .cell{
-    width: calc(70vw / 6);
+    width: calc(90vw / 6);
     min-width: 42px;
-    height: calc(70vw / 6);
+    height: calc(90vw / 6);
     min-height: 42px;
     border: 1px solid black;
     cursor: pointer;
@@ -69,9 +69,9 @@ main{
 }
 .choose-fruit{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: flex-start;
-    width: calc(50vw + 2px);
+    width: calc(90vw + 2px);
     margin: 2rem auto 0;
     column-gap: 20px;
 }
@@ -79,7 +79,7 @@ main{
     border: 2px solid var(--main-color);
     border-radius: 20px;
     height: 100px;
-    width: calc(50% - 10px);
+    width: calc(40% - 10px);
     cursor: pointer;
 }
 .fruit.active{
