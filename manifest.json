@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
 	"name": "Fruity-Cross",
-	"short_name": "GX",
+	"short_name": "Fruity-Cross",
 	"start_url": ".",
 	"content_security_policy": "script-src 'self' https://example.com; object-src 'self'",
 	"default_locale": "en",

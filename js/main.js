@@ -106,26 +106,50 @@ function initDB() {
 
         request.onupgradeneeded = (event) => {
             const db = event.target.result;
-
             if (!db.objectStoreNames.contains("levels")) {
-                db.createObjectStore("levels", { keyPath: "id", autoIncrement: true });
+                const store = db.createObjectStore("levels", { keyPath: "id", autoIncrement: true })
+                store.createIndex("titleIndex", "title", { unique: true })
             }
         };
 
         request.onsuccess = (event) => {
-            console.log("Database inizializzato!");
             resolve(event.target.result);
         };
 
         request.onerror = (event) => {
-            console.error("Errore nell'inizializzazione del database:", event.target.error);
             reject(event.target.error);
         };
     });
 }
 initDB().then((db) => {
-    console.log("DB pronto per l'uso:", db);
+    console.log("DB pronto per l'uso:", db)
 }).catch((error) => {
-    console.error("Errore durante l'inizializzazione:", error);
-});
+    console.error("Errore durante l'inizializzazione:", error)
+})
+/*
+function clearDatabase(dbName) {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.deleteDatabase(dbName);
+
+        request.onsuccess = () => {
+            console.log(`Database '${dbName}' eliminato con successo.`);
+            resolve();
+        };
+
+        request.onerror = (event) => {
+            console.error(`Errore durante l'eliminazione del database '${dbName}':`, event.target.error);
+            reject(event.target.error);
+        };
+
+        request.onblocked = () => {
+            console.warn(`Eliminazione del database '${dbName}' bloccata. Chiudere le connessioni aperte.`);
+        };
+    });
+}
+
+// Esempio di utilizzo
+clearDatabase("fruity-cross")
+    .then(() => console.log("Database pulito."))
+    .catch((error) => console.error("Errore:", error));
+*/
 

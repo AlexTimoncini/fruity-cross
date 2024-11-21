@@ -17,25 +17,32 @@ main{
     display: flex;
     justify-content: flex-start;
     height: 32px;
+    column-gap: 10px;
 }
-.error {
-    width: 32px;
+.heart{
     height: 32px;
+    width: 32px;
     position: relative;
 }
-.error:before, .error:after {
+.heart img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.crossed:before, .crossed:after {
     position: absolute;
-    left: 15px;
+    left: 13px;
+    top: -8px;
     content: ' ';
-    height: 33px;
+    height: 45px;
     width: 4px;
     background-color: red;
     border-radius: 3px;
 }
-.error:before {
+.crossed:before {
     transform: rotate(45deg);
 }
-.error:after {
+.crossed:after {
     transform: rotate(-45deg);
 }
 #grid{

@@ -39,7 +39,7 @@ function init() {
                 if (cursor) {
                     const record = cursor.value;
                     if (record.completed === true) {
-                        completedLevels.push(record.title);
+                        completedLevels.push(record.title.toString())
                     }
                     cursor.continue();
                 } else {
@@ -63,5 +63,9 @@ function init() {
             });
     }).catch((error) => {
         console.error("Errore durante l'inizializzazione:", error);
-    });
+    })
+    if(localStorage.getItem("interval")) {
+        clearInterval(parseInt(localStorage.getItem("interval")))
+    }
+    localStorage.setItem("timer", 0)
 }
