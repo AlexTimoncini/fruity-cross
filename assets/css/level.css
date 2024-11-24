@@ -98,3 +98,56 @@ main{
     object-fit: contain;
     display: block;
 }
+.level-alert{
+    text-align: center;
+    opacity: 0;
+    z-index: -10;
+    scale: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    transition: all .33s ease-in-out;
+    background-color: var(--main-color-light);
+    width: calc(100% - 40px);
+    max-width: 560px;
+    padding: 0 20px 20px;
+    font-family: var(--game);
+}
+
+.level-alert.active {
+    opacity: 1;
+    scale: 1;
+    z-index: 10;
+}
+.level-alert .level-mess{
+    font-size: 1.5rem;
+    padding: 20px 0;
+}
+.backdrop{
+    position: absolute;
+}
+.backdrop.active{
+    inset: -50px;
+    backdrop-filter: blur(5px);
+    z-index: 9;
+}
+.level-alert .level-title {
+    height: 50px;
+    background-color: var(--main-color);
+    color: var(--white);
+    width: 50%;
+    margin: -25px auto 0;
+    line-height: 50px;
+    border-radius: 15px;
+}
+.level-buttons{
+    position: absolute;
+    bottom: -25px;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

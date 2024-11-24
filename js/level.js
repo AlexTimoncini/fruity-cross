@@ -236,9 +236,16 @@ function checkWin(){
     let notCompleted = document.querySelectorAll("#grid .cell:not(.cell-right):not(.pre-placed)")
     if(notCompleted.length === 0){
         saveWin()
-        alertGX("You must feel good uh!?", "VICTORY", false, ()=> {
-            top.location = "#/"
-        })
+        document.getElementById("alert_win").classList.add("active")
+        if(!document.getElementById("backdrop").classList.contains("active")){
+            document.getElementById("backdrop").classList.add("active")
+        }
+        let seconds = parseInt(localStorage.getItem("timer")),
+            minutes = Math.floor(seconds / 60),
+            remainingSeconds = seconds % 60;
+        if(document.querySelector("#alert_win .level-mess")) {
+            document.querySelector("#alert_win .level-mess").innerText.replace('{{timer}}', `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`);
+        }
     } else {
         save()
     }
