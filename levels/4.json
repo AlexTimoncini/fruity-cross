@@ -1,0 +1,191 @@
+{
+    "level": {
+        "title": 4,
+        "data": {
+            "errors": 3,
+            "grid": [
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": true
+                },
+
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": true
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": true
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": true
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": true
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+
+                {
+                    "value": "2",
+                    "placed": true
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                }
+            ],
+            "decorators": [
+                {
+                    "cell": 9,
+                    "dir": "R",
+                    "decorator": "CR"
+                },
+                {
+                    "cell": 14,
+                    "dir": "B",
+                    "decorator": "EQ"
+                },
+                {
+                    "cell": 15,
+                    "dir": "R",
+                    "decorator": "CR"
+                },
+                {
+                    "cell": 21,
+                    "dir": "R",
+                    "decorator": "EQ"
+                },
+                {
+                    "cell": 27,
+                    "dir": "R",
+                    "decorator": "CR"
+                },
+                {
+                    "cell": 17,
+                    "dir": "B",
+                    "decorator": "CR"
+                }
+            ]
+        }
+    }
+}
