@@ -52,10 +52,11 @@ async function initGrid(data, level){
         grid += `<div class="cell ${cell.placed ? "pre-placed" : (placed !== undefined ? (placed.err ? "cell-error" : "cell-right") : "")}" id="cell_${id}" data-result="${cell.value}" ${cell.placed ? `data-disabled="true"` : ""}>${cell.placed ? `<img class="fruit-img" src="./assets/images/fruits/fruit_${cell.value}.png" alt="fruit image" draggable="false">` : (placed !== undefined ? `<img class="fruit-img" src="./assets/images/fruits/fruit_${placed.v}.png" alt="fruit image" draggable="false">` : "")}</div>`
     })
     document.getElementById("grid").insertAdjacentHTML("afterbegin", grid)
-    data.decorators.forEach(decor => {
-
-        document.getElementById("cell_"+decor.cell).classList.add("decorator", "dir_"+decor.dir.toLowerCase(), decor.decorator.toLowerCase())
-    })
+    if(data.decorators.length){
+        data.decorators.forEach(decor => {
+            document.getElementById("cell_"+decor.cell).classList.add("decorator", "dir_"+decor.dir.toLowerCase(), decor.decorator.toLowerCase())
+        })
+    }
     initEvents(data)
     //CLOCK
     let interval = setInterval(() => {
