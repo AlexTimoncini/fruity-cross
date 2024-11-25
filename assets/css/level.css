@@ -73,6 +73,19 @@ main{
 .cell-right{
     pointer-events: none;
 }
+.cell-error::before{
+    content: '';
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    background: repeating-linear-gradient(
+            -45deg,
+            red,
+            red 3px,
+            transparent 5px,
+            transparent 15px
+    );
+}
 .choose-fruit{
     display: flex;
     justify-content: space-evenly;
@@ -115,7 +128,6 @@ main{
     font-family: var(--game);
     border: 5px solid var(--main-color);
 }
-
 .level-alert.active {
     opacity: 1;
     scale: 1;
@@ -156,6 +168,7 @@ main{
     z-index: 2;
     text-align: center;
     background-color: var(--white);
+    color: var(--main-color);
 }
 .dir_b.decorator::after{
     top: 100%;
