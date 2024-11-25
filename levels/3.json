@@ -5,9 +5,55 @@
             "errors": 3,
             "grid": [
                 {
+                    "value": "1",
+                    "placed": false
+                },
+                {
                     "value": "2",
                     "placed": false
                 },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": true
+                },
+                {
+                    "value": "2",
+                    "placed": true
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": true
+                },
+
                 {
                     "value": "1",
                     "placed": false
@@ -20,6 +66,19 @@
                     "value": "1",
                     "placed": false
                 },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": true
+                },
+
                 {
                     "value": "2",
                     "placed": true
@@ -34,10 +93,23 @@
                 },
                 {
                     "value": "2",
+                    "placed": false
+                },
+                {
+                    "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+
+                {
+                    "value": "1",
                     "placed": true
                 },
                 {
-                    "value": "1",
+                    "value": "2",
                     "placed": false
                 },
                 {
@@ -46,58 +118,6 @@
                 },
                 {
                     "value": "1",
-                    "placed": false
-                },
-                {
-                    "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "2",
-                    "placed": false
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                    "value": "2",
-                    "placed": false
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                    "value": "2",
-                    "placed": false
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                    "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                    "value": "2",
-                    "placed": false
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                    "value": "2",
                     "placed": true
                 },
                 {
@@ -108,20 +128,9 @@
                     "value": "1",
                     "placed": false
                 },
+
                 {
                     "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                    "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
                     "placed": false
                 },
                 {
@@ -130,23 +139,51 @@
                 },
                 {
                     "value": "2",
-                    "placed": true
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
                 },
                 {
                     "value": "1",
                     "placed": false
                 },
                 {
-                    "value": "2",
-                    "placed": true
-                },
-                {
                     "value": "1",
                     "placed": false
+                }
+            ],
+            "decorators": [
+                {
+                    "cell": 7,
+                    "dir": "T",
+                    "decorator": "CR"
                 },
                 {
-                    "value": "2",
-                    "placed": true
+                    "cell": 5,
+                    "dir": "R",
+                    "decorator": "EQ"
+                },
+                {
+                    "cell": 15,
+                    "dir": "R",
+                    "decorator": "EQ"
+                },
+                {
+                    "cell": 21,
+                    "dir": "R",
+                    "decorator": "CR"
+                },
+                {
+                    "cell": 30,
+                    "dir": "B",
+                    "decorator": "EQ"
+                },
+                {
+                    "cell": 32,
+                    "dir": "L",
+                    "decorator": "CR"
                 }
             ]
         }

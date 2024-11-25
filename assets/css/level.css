@@ -179,7 +179,7 @@ main{
 .dir_t.decorator::after{
     bottom: 100%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(-50%, 50%) rotate(90deg);
     margin-bottom: 1px;
 }
 .dir_r.decorator::after{
@@ -191,7 +191,7 @@ main{
 .dir_l.decorator::after{
     top: 50%;
     right: 100%;
-    transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(50%, -50%);
     margin-right: 1px;
 }
 .decorator.eq::after{
