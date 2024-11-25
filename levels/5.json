@@ -1,0 +1,22 @@
+{
+    "level": {
+        "title": 5,
+        "data": {
+            "errors": 0,
+            "grid": [
+                {"value": "1", "placed": true}, {"value": "2", "placed": false}, {"value": "1", "placed": false}, {"value": "2", "placed": false}, {"value": "1", "placed": false}, {"value": "2", "placed": false},
+                {"value": "2", "placed": false}, {"value": "2", "placed": true}, {"value": "1", "placed": false}, {"value": "2", "placed": true}, {"value": "1", "placed": false}, {"value": "1", "placed": false},
+                {"value": "1", "placed": false}, {"value": "2", "placed": false}, {"value": "2", "placed": false}, {"value": "1", "placed": false}, {"value": "2", "placed": false}, {"value": "2", "placed": false},
+                {"value": "2", "placed": false}, {"value": "1", "placed": false}, {"value": "1", "placed": false}, {"value": "1", "placed": false}, {"value": "2", "placed": false}, {"value": "1", "placed": false},
+                {"value": "2", "placed": false}, {"value": "1", "placed": false}, {"value": "2", "placed": false}, {"value": "1", "placed": false}, {"value": "2", "placed": false}, {"value": "2", "placed": false},
+                {"value": "1", "placed": false}, {"value": "1", "placed": false}, {"value": "2", "placed": false}, {"value": "1", "placed": false}, {"value": "2", "placed": false}
+            ],
+            "decorators": [
+                {"cell": 7, "dir": "T", "decorator": "CR"},
+                {"cell": 14, "dir": "B", "decorator": "EQ"},
+                {"cell": 17, "dir": "L", "decorator": "CR"},
+                {"cell": 25, "dir": "B", "decorator": "EQ"}
+            ]
+        }
+    }
+}
