@@ -152,4 +152,17 @@ clearDatabase("fruity-cross")
     .then(() => console.log("Database pulito."))
     .catch((error) => console.error("Errore:", error));
 */
+async function getLevels() {
+    try {
+        const response = await fetch('./levels/levels.json');
+        if (!response.ok) {
+            throw new Error('Failed to load level manifest');
+        }
+        const manifest = await response.json()
+        return manifest.levels
+    } catch (error) {
+        return false
+    }
+}
+
 

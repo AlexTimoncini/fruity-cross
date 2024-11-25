@@ -1,24 +1,14 @@
-async function getLevels(completed) {
+async function buildLevels(completed) {
     completed.sort()
-    try {
-        const response = await fetch('./levels/levels.json');
-        if (!response.ok) {
-            throw new Error('Failed to load level manifest');
-        }
-        const manifest = await response.json();
-        const levels = manifest.levels;
-        console.log(levels)
-        console.log(completed)
-        levels.forEach(l=>{
+    await getLevels().then(result => {
+        result.forEach(l=>{
             let isLocked = (l.toString() !== "1"  && l !== (parseInt(completed[completed.length - 1]) + 1).toString()) && !completed.includes(l)
             let level = `
-                <li class="level ${isLocked ? 'locked' : (completed.includes(l) ? 'completed' : '')}"><a href="#/level?l=${l}"><span>${isLocked ? '<img src="./assets/images/lock.svg" alt="lock img">' : l}</span></a></li>
-            `
+            <li class="level ${isLocked ? 'locked' : (completed.includes(l) ? 'completed' : '')}"><a href="#/level?l=${l}"><span>${isLocked ? '<img src="./assets/images/lock.svg" alt="lock img">' : l}</span></a></li>
+        `
             document.getElementById("levels").insertAdjacentHTML("beforeend", level)
         })
-    } catch (error) {
-        console.error(error.message);
-    }
+    }).catch(err => console.log(err))
 }
 init()
 function init() {
@@ -55,8 +45,7 @@ function init() {
     initDB().then((db) => {
         getCompletedLevels(db)
             .then((levels) => {
-                getLevels(levels);
-
+                buildLevels(levels);
             })
             .catch((error) => {
                 console.error("Errore durante l'estrazione dei livelli completati:", error);

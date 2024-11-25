@@ -53,25 +53,24 @@ main{
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid black;
+    border: 1px solid var(--main-color);
+    background-color: var(--white);
 }
 .cell{
     width: calc(90vw / 6);
     min-width: 42px;
     height: calc(90vw / 6);
     min-height: 42px;
-    border: 1px solid black;
+    border: 1px solid var(--main-color);
     cursor: pointer;
-}
-.cell-error{
-    background-color: var(--main-color-light);
+    position: relative;
+    padding: 5px;
 }
 .cell.pre-placed{
-    background-color: var(--dgreen);
+    background-color: var(--main-color-light);
     pointer-events: none;
 }
 .cell-right{
-    background-color: #a6ffa6;
     pointer-events: none;
 }
 .choose-fruit{
@@ -114,6 +113,7 @@ main{
     max-width: 560px;
     padding: 0 20px 20px;
     font-family: var(--game);
+    border: 5px solid var(--main-color);
 }
 
 .level-alert.active {
@@ -150,4 +150,42 @@ main{
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+.decorator::after{
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    background-color: var(--white);
+}
+.dir_b.decorator::after{
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    margin-top: 1px;
+}
+.dir_t.decorator::after{
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    margin-bottom: 1px;
+}
+.dir_r.decorator::after{
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    margin-left: 1px;
+}
+.dir_l.decorator::after{
+    top: 50%;
+    right: 100%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    margin-right: 1px;
+}
+.decorator.eq::after{
+    content: '=';
+    font-size: 1.5rem;
+}
+.decorator.cr::after{
+    content: '\00D7';
+    font-size: 1.3rem;
 }

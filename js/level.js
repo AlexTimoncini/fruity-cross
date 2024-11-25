@@ -52,6 +52,10 @@ async function initGrid(data, level){
         grid += `<div class="cell ${cell.placed ? "pre-placed" : (placed !== undefined ? (placed.err ? "cell-error" : "cell-right") : "")}" id="cell_${id}" data-result="${cell.value}" ${cell.placed ? `data-disabled="true"` : ""}>${cell.placed ? `<img class="fruit-img" src="./assets/images/fruits/fruit_${cell.value}.png" alt="fruit image" draggable="false">` : (placed !== undefined ? `<img class="fruit-img" src="./assets/images/fruits/fruit_${placed.v}.png" alt="fruit image" draggable="false">` : "")}</div>`
     })
     document.getElementById("grid").insertAdjacentHTML("afterbegin", grid)
+    data.decorators.forEach(decor => {
+
+        document.getElementById("cell_"+decor.cell).classList.add("decorator", "dir_"+decor.dir.toLowerCase(), decor.decorator.toLowerCase())
+    })
     initEvents(data)
     //CLOCK
     let interval = setInterval(() => {
@@ -77,7 +81,7 @@ async function initGrid(data, level){
     }
     //END CLOCK
 }
-function initEvents(data) {
+ async function initEvents(data) {
     localStorage.removeItem("activeFruit")
     let fruits = []
     for (let i = 1; i <= 5; i++) {
@@ -121,7 +125,7 @@ function initEvents(data) {
                 }
             })
         }
-    }, false)
+    })
     const grid = document.getElementById("grid")
     let isDragging = false,
         dragTimeout;
@@ -199,6 +203,17 @@ function initEvents(data) {
             }
         })
     })
+    //alerts
+    await getLevels().then(result=>{
+        let nextLevel = parseInt(localStorage.getItem("level")) + 1
+        if(result.includes(nextLevel.toString())){
+            document.getElementById("nextLevel").addEventListener('click', ()=>{
+                top.location = "#/level?l="+nextLevel
+            })
+        } else {
+            document.getElementById("nextLevel").remove()
+        }
+    }).catch(e=>console.log(e))
 }
 function initErrors(errors, lives) {
     localStorage.setItem("maxErrors", errors)
@@ -230,21 +245,23 @@ function newError() {
 }
 function gameOver(){
     restartGame()
-    alertGX("Try again?","GAME OVER", true, ()=>{location.reload()}, ()=>{top.location = "#/"})
+    document.getElementById("alert_lose").classList.add("active")
+    document.querySelector(".backdrop").classList.add("active")
 }
 function checkWin(){
     let notCompleted = document.querySelectorAll("#grid .cell:not(.cell-right):not(.pre-placed)")
     if(notCompleted.length === 0){
         saveWin()
         document.getElementById("alert_win").classList.add("active")
-        if(!document.getElementById("backdrop").classList.contains("active")){
-            document.getElementById("backdrop").classList.add("active")
+        if(!document.querySelector(".backdrop").classList.contains("active")){
+            document.querySelector(".backdrop").classList.add("active")
         }
         let seconds = parseInt(localStorage.getItem("timer")),
             minutes = Math.floor(seconds / 60),
             remainingSeconds = seconds % 60;
-        if(document.querySelector("#alert_win .level-mess")) {
-            document.querySelector("#alert_win .level-mess").innerText.replace('{{timer}}', `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`);
+        let mesEl = document.querySelector("#alert_win .level-mess")
+        if(mesEl) {
+            mesEl.innerText = mesEl.innerText.replace('{{timer}}', `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`);
         }
     } else {
         save()
@@ -256,13 +273,7 @@ function saveWin(){
     }
     initDB().then((db) => {
         let level = localStorage.getItem("level")
-        const newLevel = {
-            title: level,
-            completed: true,
-            placedCells: "[]",
-            time: 0
-        };
-        setProp(db, level, ['completed', 'placedCells', 'time'], [true, "[]", 0])
+        setProp(db, level, ['completed', 'placedCells', 'time', 'lives'], [true, "[]", 0, parseInt(localStorage.getItem("maxErrors"))])
             .then((result) => {
                 console.log("Operazione completata:", result);
             })

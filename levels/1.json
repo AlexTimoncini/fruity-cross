@@ -5,27 +5,7 @@
             "errors": 3,
             "grid": [
                 {
-                   "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                   "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                   "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
+                   "value": "1",
                     "placed": false
                 },
                 {
@@ -34,70 +14,60 @@
                 },
                 {
                    "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
                     "placed": false
                 },
                 {
-                   "value": "2",
+                    "value": "2",
                     "placed": true
                 },
                 {
-                    "value": "1",
+                   "value": "1",
                     "placed": false
                 },
                 {
-                   "value": "2",
+                    "value": "2",
+                    "placed": false
+                },
+
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                   "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                   "value": "1",
                     "placed": true
                 },
                 {
-                   "value": "2",
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                   "value": "1",
+                    "placed": false
+                },
+
+                {
+                   "value": "1",
                     "placed": true
                 },
                 {
-                    "value": "1",
+                    "value": "2",
                     "placed": false
                 },
                 {
-                   "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                   "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
+                   "value": "1",
                     "placed": false
                 },
                 {
                     "value": "1",
-                    "placed": false
-                },
-                {
-                   "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                   "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                   "value": "2",
                     "placed": true
                 },
                 {
@@ -105,8 +75,63 @@
                     "placed": true
                 },
                 {
+                    "value": "2",
+                    "placed": true
+                },
+
+                {
+                    "value": "2",
+                    "placed": true
+                },
+                {
+                   "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                   "value": "2",
+                    "placed": false
+                },
+                {
                     "value": "1",
                     "placed": false
+                },
+                {
+                   "value": "1",
+                    "placed": false
+                },
+
+                {
+                   "value": "1",
+                    "placed": true
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                   "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+                {
+                   "value": "1",
+                    "placed": false
+                },
+                {
+                    "value": "2",
+                    "placed": false
+                },
+
+                {
+                    "value": "2",
+                    "placed": true
                 },
                 {
                    "value": "2",
@@ -114,40 +139,72 @@
                 },
                 {
                     "value": "1",
-                    "placed": false
-                },
-                {
-                   "value": "2",
                     "placed": true
                 },
                 {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                    "value": "1",
-                    "placed": false
-                },
-                {
-                   "value": "2",
+                   "value": "1",
                     "placed": true
                 },
                 {
-                    "value": "1",
+                    "value": "2",
                     "placed": false
                 },
                 {
-                   "value": "2",
-                    "placed": true
-                },
-                {
-                    "value": "1",
+                   "value": "1",
                     "placed": false
-                },
-                {
-                   "value": "2",
-                    "placed": true
                 }
+            ],
+            "decorators": [
+              {
+                "cell": 3,
+                "dir": "B",
+                "decorator": "EQ"
+              },
+              {
+                "cell": 5,
+                "dir": "B",
+                "decorator": "CR"
+              },
+              {
+                "cell": 8,
+                "dir": "B",
+                "decorator": "CR"
+              },
+              {
+                "cell": 11,
+                "dir": "R",
+                "decorator": "CR"
+              },
+              {
+                "cell": 15,
+                "dir": "B",
+                "decorator": "CR"
+              },
+              {
+                "cell": 20,
+                "dir": "B",
+                "decorator": "CR"
+              },
+              {
+                "cell": 21,
+                "dir": "R",
+                "decorator": "EQ"
+              },
+              {
+                "cell": 23,
+                "dir": "R",
+                "decorator": "EQ"
+              },
+              {
+                "cell": 26,
+                "dir": "R",
+                "decorator": "CR"
+              },
+              {
+                "cell": 28,
+                "dir": "R",
+                "decorator": "CR"
+              }
             ]
         }
     }
