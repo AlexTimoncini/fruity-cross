@@ -11,6 +11,7 @@ main{
     display: flex;
     justify-content: space-between;
     width: calc(90vw + 2px);
+    max-width: 602px;
     margin: 0 auto;
 }
 .error-bar{
@@ -50,6 +51,8 @@ main{
     min-width: 252px;
     height: calc(90vw + 2px);
     min-height: 252px;
+    max-width: 602px;
+    max-height: 602px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -60,6 +63,8 @@ main{
     width: calc(90vw / 6);
     min-width: 42px;
     height: calc(90vw / 6);
+    max-width: 100px;
+    max-height: 100px;
     min-height: 42px;
     border: 1px solid var(--main-color);
     cursor: pointer;
@@ -91,6 +96,7 @@ main{
     justify-content: space-evenly;
     align-items: flex-start;
     width: calc(90vw + 2px);
+    max-width: 602px;
     margin: 2rem auto 0;
     column-gap: 20px;
 }
@@ -123,7 +129,7 @@ main{
     transition: all .33s ease-in-out;
     background-color: var(--main-color-light);
     width: calc(100% - 40px);
-    max-width: 560px;
+    max-width: 602px;
     padding: 0 20px 20px;
     font-family: var(--game);
     border: 5px solid var(--main-color);
@@ -196,9 +202,9 @@ main{
 }
 .decorator.eq::after{
     content: '=';
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 .decorator.cr::after{
     content: '\00D7';
-    font-size: 1.3rem;
+    font-size: 1.8rem;
 }

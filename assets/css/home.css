@@ -30,6 +30,7 @@
     height: calc(100% - 80px);
     padding: 0 20px 20px;
     font-family: var(--game);
+    border: 5px solid var(--main-color)
 }
 
 #levels-wrapper.active {

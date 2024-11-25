@@ -4,7 +4,7 @@ async function buildLevels(completed) {
         result.forEach(l=>{
             let isLocked = (l.toString() !== "1"  && l !== (parseInt(completed[completed.length - 1]) + 1).toString()) && !completed.includes(l)
             let level = `
-            <li class="level ${isLocked ? 'locked' : (completed.includes(l) ? 'completed' : '')}"><a href="#/level?l=${l}"><span>${isLocked ? '<img src="./assets/images/lock.svg" alt="lock img">' : l}</span></a></li>
+            <li class="level ${isLocked ? 'locked' : (completed.includes(l) ? 'completed' : '')}"><a href="#/level?l=${l}"><span style="width:100%">${isLocked ? '<img src="./assets/images/lock.svg" alt="lock img">' : l}</span></a></li>
         `
             document.getElementById("levels").insertAdjacentHTML("beforeend", level)
         })
