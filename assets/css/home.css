@@ -96,3 +96,16 @@
     display: block;
     margin: 0 auto;
 }
+#rules {
+    text-align: left;
+    font-size: 2rem;
+}
+#rules h2{
+    text-align: center;
+    font-family: var(--game);
+    font-size: 2.5rem;
+}
+#rules img{
+    height: 2.5rem;
+    width: 2.5rem;
+}

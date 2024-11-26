@@ -1,5 +1,33 @@
 <div class="container text-center">
     <h1 class="title">Fruity Cross</h1>
+    <div id="rules">
+        <h2>How to play</h2>
+        <ul>
+            <li>
+                Fill the grid so that each cell contains either a <img src="./assets/images/fruits/fruit_1.png" alt="watermelon image"> or a <img src="./assets/images/fruits/fruit_2.png" alt="peach image">.
+            </li>
+            <li>
+                No more than 2 <img src="./assets/images/fruits/fruit_1.png" alt="watermelon image"> or <img src="./assets/images/fruits/fruit_2.png" alt="peach image"> may be next to each other, either vertically or horizontally.
+                <ul class="padded-ul">
+                    <li>
+                        <img src="./assets/images/fruits/fruit_1.png" alt="watermelon image"><img src="./assets/images/fruits/fruit_1.png" alt="watermelon image"> &check;
+                    </li>
+                    <li>
+                        <img src="./assets/images/fruits/fruit_1.png" alt="watermelon image"><img src="./assets/images/fruits/fruit_1.png" alt="watermelon image"><img src="./assets/images/fruits/fruit_1.png" alt="watermelon image"> &cross;
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Cells separated by an = sign must be of the same type.
+            </li>
+            <li>
+                Cells separated by an &times; sign must be of the opposite type.
+            </li>
+            <li>
+                Each puzzle has one right answer and can be solved via deduction (you should never have to make a guess). 
+            </li>
+        </ul>
+    </div>
     <button class="button big" id="levels-btn">Choose Level</button>
     <div id="levels-wrapper">
         <div class="close-button"></div>
