@@ -98,12 +98,19 @@
 }
 #rules {
     text-align: left;
-    font-size: 2rem;
+    font-size: 1.1rem;
+}
+#rules ul{
+    list-style: none;
+    padding: 20px 0;
+}
+#rules ul li {
+    margin: 5px 0;
 }
 #rules h2{
     text-align: center;
     font-family: var(--game);
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 #rules img{
     height: 2.5rem;
