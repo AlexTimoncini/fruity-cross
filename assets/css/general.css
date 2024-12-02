@@ -39,8 +39,8 @@ body{
     font-family: var(--display), sans-serif;
     color: var(--black);
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(161,239,255,1) 100%);
-    overflow-x: hidden;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 main{
