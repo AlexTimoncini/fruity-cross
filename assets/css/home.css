@@ -18,7 +18,7 @@
     opacity: 0;
     z-index: -10;
     scale: 0;
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -39,7 +39,7 @@
     z-index: 10;
 }
 #levels-wrapper ~ .backdrop{
-    position: absolute;
+    position: fixed;
 }
 #levels-wrapper.active ~ .backdrop{
     inset: -50px;
